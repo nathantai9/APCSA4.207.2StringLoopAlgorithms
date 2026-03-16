@@ -1,8 +1,7 @@
 public class StringLoopAlgorithms {
-    // TODO DO THIS FIRST: get rid of vscode and use VSCodium instead, I don't want Microsoft to track my code😆
     // Directions:
-    // Pick any 5 of the following algorithms and write static methods for them (ask Mr. Riley if you need clarification about how an algorithm should work)
-    // int removeOddDigits(String number)
+    // Pick any 5 of the following algorithms and write static methods for them (ask Mr. Riley if you need clarification about how an algorithm should work):
+
     // countTimesLetterAppears()
     public static int countTimesLetterAppears(String word, String characterBeingCounted){
             int numOfTimesLetterAppears = 0;
@@ -16,10 +15,22 @@ public class StringLoopAlgorithms {
     }
 
     // boolean hasNumbers(String myString)
-    // String removeVowels(String myString)
-    // String sayLaXTimes(int x)
-    // double averageDigitsOfNumberString(String num)
-    // String removeLetter(String fullString, String letter)
+    public static boolean hasNumbers(String word){
+        int numOfAppear = 0;
+        for(int i = 0; i < word.length(); i++){
+            String letter = word.substring(i, i + 1);
+            if(letter.equals("0") || letter.equals("1") || letter.equals("2") || letter.equals("3") || letter.equals("4") || letter.equals("5") || letter.equals("6") || letter.equals("7") || letter.equals("8") || letter.equals("9")){
+                numOfAppear++;
+            }
+        }
+        if(numOfAppear > 0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     // hasOnlyConsonants()
     public static boolean hasOnlyConsonants(String word){
             int numOfVowels = 0;
@@ -37,8 +48,6 @@ public class StringLoopAlgorithms {
             }
     }
 
-    // int sumDigitsOfNumberString(String num)
-    // int maxDigitOfNumberString(String num)
     // countVowels()
     public static int countVowels(String myString){
             int numOfVowels = 0;
@@ -51,7 +60,6 @@ public class StringLoopAlgorithms {
             return numOfVowels;
     }
 
-    // boolean hasOnlyLetter(String fullString, String letter)
     // doesLetterAppear()
     public static boolean doesLetterAppear(String word, String booleanLetter){
             int doesItAppear = 0;
@@ -103,6 +111,14 @@ public class StringLoopAlgorithms {
                     System.out.println("Expect: true from 'Fly' \nActual: " + hasOnlyConsonants("Fly"));
                     System.out.println("Expect: true from 'Ssh' \nActual: " + hasOnlyConsonants("Ssh"));
                 System.out.println("-=+* Finished testing hasOnlyConsonants *+=-");
+            System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+                System.out.println("-=+* Testing hasNumbers *+=-");
+                    System.out.println("Expect: true from 'H3llo' \nActual: " + hasNumbers("H3llo"));
+                    System.out.println("Expect: false from 'Apple' \nActual: " + hasNumbers("Apple"));
+                    System.out.println("Expect: true from '7' \nActual: " + hasNumbers("7"));
+                    System.out.println("Expect: true from 'Agent007!' \nActual: " + hasNumbers("Agent007!"));
+                    System.out.println("Expect: false from '' \nActual: " + hasNumbers(""));
+                System.out.println("-=+* Finished testing hasNumbers *+=-");
             System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.println("--==++** Finished String Loop Algorithms Tests **++==--");
     }
