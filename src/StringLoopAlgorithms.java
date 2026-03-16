@@ -1,7 +1,4 @@
 public class StringLoopAlgorithms {
-    // Directions:
-    // Pick any 5 of the following algorithms and write static methods for them (ask Mr. Riley if you need clarification about how an algorithm should work):
-
     // countTimesLetterAppears()
     public static int countTimesLetterAppears(String word, String characterBeingCounted){
             int numOfTimesLetterAppears = 0;
@@ -29,6 +26,16 @@ public class StringLoopAlgorithms {
         else {
             return false;
         }
+    }
+
+    public static boolean hasNumbersv2(String word){
+        for(int i = 0; i < word.length(); i++){
+            String letter = word.substring(i, i + 1);
+            if("1234567890".indexOf(letter) >= 0){
+                return true;
+            }
+        }
+        return false;
     }
 
     // hasOnlyConsonants()
