@@ -1,4 +1,7 @@
 public class StringLoopAlgorithms {
+    // Directions:
+    // Pick any 5 of the following algorithms and write static methods for them (ask Mr. Riley if you need clarification about how an algorithm should work):
+
     // countTimesLetterAppears()
     public static int countTimesLetterAppears(String word, String characterBeingCounted){
             int numOfTimesLetterAppears = 0;
@@ -13,31 +16,16 @@ public class StringLoopAlgorithms {
 
     // boolean hasNumbers(String myString)
     public static boolean hasNumbers(String word){
-        int numOfAppear = 0;
         for(int i = 0; i < word.length(); i++){
             String letter = word.substring(i, i + 1);
-            if(letter.equals("0") || letter.equals("1") || letter.equals("2") || letter.equals("3") || letter.equals("4") || letter.equals("5") || letter.equals("6") || letter.equals("7") || letter.equals("8") || letter.equals("9")){
-                numOfAppear++;
-            }
-        }
-        if(numOfAppear > 0){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    public static boolean hasNumbersv2(String word){
-        for(int i = 0; i < word.length(); i++){
-            String letter = word.substring(i, i + 1);
-            if("1234567890".indexOf(letter) >= 0){
+            //if(letter.equals("0") || letter.equals("1") || letter.equals("2") || letter.equals("3") || letter.equals("4") || letter.equals("5") || letter.equals("6") || letter.equals("7") || letter.equals("8") || letter.equals("9")){
+            if("1234567890".indexOf(letter) >= 0){ // or != 1
                 return true;
             }
         }
         return false;
     }
-
+// TODO implement the above indexOf to the other algorithms for funsies
     // hasOnlyConsonants()
     public static boolean hasOnlyConsonants(String word){
             int numOfVowels = 0;
